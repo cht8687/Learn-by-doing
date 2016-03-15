@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var env = process.env.NODE_ENV || 'development';
+var poststylus = require('poststylus');
 
 module.exports = {
   devtool: 'source-map',
@@ -26,6 +27,10 @@ module.exports = {
         test: /\.js$/, 
         loaders: ['react-hot', 'babel'],
         include: [path.resolve('src')]
+      },
+      {
+        test: /\.styl$/, 
+        loader: 'style-loader!css-loader!stylus-loader'
       }
     ],
     preLoaders: [
@@ -36,7 +41,12 @@ module.exports = {
       }
     ]   
   },
-  resolve: { extensions: ['', '.js'] },
+  stylus: {
+    use: [
+      poststylus([ 'autoprefixer', 'rucksack-css' ])
+    ]
+  },
+  resolve: { extensions: ['', '.js', '.styl'] },
   stats: { colors: true },
   eslint: { configFile: 'src/.eslintrc' },
   devServer: {
