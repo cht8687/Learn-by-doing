@@ -36,6 +36,7 @@
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.3",
     "html-webpack-plugin": "^1.6.1",
+    "immutable": "^3.7.6",
     "react": "^0.14",
     "react-dom": "^0.14.0",
     "react-hot-loader": "^1.2.9",
