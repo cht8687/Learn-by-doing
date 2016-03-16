@@ -2,7 +2,8 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 var env = process.env.NODE_ENV || 'development';
-var poststylus = require('poststylus');
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 
 module.exports = {
   devtool: 'source-map',
@@ -28,10 +29,7 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: [path.resolve('src')]
       },
-      {
-        test: /\.styl$/, 
-        loader: 'style-loader!css-loader!stylus-loader'
-      }
+      { test: /\.css$/,loader: 'style-loader!css-loader!postcss-loader'}
     ],
     preLoaders: [
       {
@@ -39,14 +37,12 @@ module.exports = {
         loaders: ['eslint-loader'], 
         include: [path.resolve('src')]
       }
-    ]   
-  },
-  stylus: {
-    use: [
-      poststylus([ 'autoprefixer', 'rucksack-css' ])
     ]
   },
-  resolve: { extensions: ['', '.js', '.styl'] },
+  postcss: function () {
+    return [autoprefixer, precss];
+  },
+  resolve: { extensions: ['', '.js'] },
   stats: { colors: true },
   eslint: { configFile: 'src/.eslintrc' },
   devServer: {
