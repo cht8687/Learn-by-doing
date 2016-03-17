@@ -29,7 +29,11 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: [path.resolve('src')]
       },
-      { test: /\.css$/,loader: 'style-loader!css-loader!postcss-loader'}
+      {  
+        test:   /\.css$/,
+        loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader",
+        include: [path.resolve('src')]
+      }
     ],
     preLoaders: [
       {
