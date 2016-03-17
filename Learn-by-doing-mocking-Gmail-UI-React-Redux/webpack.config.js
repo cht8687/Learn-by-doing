@@ -1,9 +1,10 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var path = require('path');
 var env = process.env.NODE_ENV || 'development';
 var autoprefixer = require('autoprefixer');
-var precss = require('precss');
+var poststylus = require('poststylus');
 
 module.exports = {
   devtool: 'source-map',
@@ -15,6 +16,7 @@ module.exports = {
   output: {filename: 'bundle.js', path: path.resolve('src')},
   plugins: [
     new HtmlWebpackPlugin(),
+    new ExtractTextPlugin("styles.css"),
     new webpack.DefinePlugin({
       'process.env': {
        NODE_ENV: '"' + env + '"'
@@ -29,9 +31,13 @@ module.exports = {
         loaders: ['react-hot', 'babel'],
         include: [path.resolve('src')]
       },
-      {  
-        test:   /\.css$/,
-        loader: "style-loader!css-loader?modules&importLoaders=1!postcss-loader",
+      { 
+        test: /\.css$/, 
+        loader: ExtractTextPlugin.extract('css?sourceMap') 
+      },
+      { 
+        test: /\.styl$/, 
+        loader: ExtractTextPlugin.extract('style','css?sourceMap&modules&importLoaders=1!stylus'), 
         include: [path.resolve('src')]
       }
     ],
@@ -43,10 +49,12 @@ module.exports = {
       }
     ]
   },
-  postcss: function () {
-    return [autoprefixer, precss];
+  stylus: {
+    use: [
+      poststylus([ 'autoprefixer', 'rucksack-css' ])
+    ]
   },
-  resolve: { extensions: ['', '.js'] },
+  resolve: { extensions: ['', '.js', '.styl'] },
   stats: { colors: true },
   eslint: { configFile: 'src/.eslintrc' },
   devServer: {
