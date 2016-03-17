@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Topbar from '../components/Topbar';
+import Topbar from '../components/Topbar/Topbar';
 import { connect } from 'react-redux';
 
 export default class Application extends Component {

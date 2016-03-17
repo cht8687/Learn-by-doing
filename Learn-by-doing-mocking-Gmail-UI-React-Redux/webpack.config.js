@@ -54,7 +54,10 @@ module.exports = {
       poststylus([ 'autoprefixer', 'rucksack-css' ])
     ]
   },
-  resolve: { extensions: ['', '.js', '.styl'] },
+  resolve: { 
+    extensions: ['', '.js', '.styl'], 
+    alias: { styles: path.resolve('src/styles')} 
+  },
   stats: { colors: true },
   eslint: { configFile: 'src/.eslintrc' },
   devServer: {
