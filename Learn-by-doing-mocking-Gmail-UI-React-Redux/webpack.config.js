@@ -34,7 +34,7 @@ module.exports = {
       },
       { 
         test: /\.css$/, 
-        loader: ExtractTextPlugin.extract('css?sourceMap') 
+        loader: ExtractTextPlugin.extract('css?sourceMap')
       },
       { 
         test: /\.styl$/, 
