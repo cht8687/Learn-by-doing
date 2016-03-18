@@ -1,5 +1,18 @@
-import React from 'react';
+import React, { PropTypes} from 'react';
 
-export default function({clsn, ...rest}) {
-  return <button className={clsn} {...rest} />
+const Button = (props) => {
+  const { label, btn } = props;
+
+  return (
+    <button className={btn}>
+      <span className={label} />
+    </button>
+  );
 };
+
+Button.propTypes = {
+  label: PropTypes.string,
+  btn: PropTypes.string
+};
+
+export default Button;
