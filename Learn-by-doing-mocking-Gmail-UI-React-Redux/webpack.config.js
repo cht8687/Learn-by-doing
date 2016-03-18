@@ -57,7 +57,10 @@ module.exports = {
   },
   resolve: { 
     extensions: ['', '.js', '.styl'], 
-    alias: { styles: path.resolve('src/styles')} 
+    alias: { 
+      styles: path.resolve('src/styles'),
+      components: path.resolve('src/components')
+    } 
   },
   stats: { colors: true },
   eslint: { configFile: 'src/.eslintrc' },
