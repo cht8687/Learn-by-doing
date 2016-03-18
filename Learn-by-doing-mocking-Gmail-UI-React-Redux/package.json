@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/cht8687/Learn-by-doing#readme",
   "devDependencies": {
+    "app-reset": "^1.0.0",
     "autoprefixer": "^6.3.3",
     "babel-cli": "^6.3.17",
     "babel-core": "^6.3.26",
