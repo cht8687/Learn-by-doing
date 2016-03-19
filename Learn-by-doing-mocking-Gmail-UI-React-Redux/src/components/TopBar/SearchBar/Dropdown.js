@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'styles/topbar.styl';
+import styles from 'styles/Topbar/topbar.styl';
 
 export default class DropDown extends React.Component {
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'styles/topbar.styl';
+import styles from 'styles/Topbar/topbar.styl';
 import Button from 'components/common/Button';
 import buttonStyles from 'styles/button.styl';
 import Dropdown from './Dropdown';

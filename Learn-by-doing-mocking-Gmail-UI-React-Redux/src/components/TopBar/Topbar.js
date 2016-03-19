@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'styles/topbar.styl';
+import styles from 'styles/TopBar/topbar.styl';
 import SearchBar from './SearchBar/SearchBar';
 
 export default class Topbar extends React.Component {
