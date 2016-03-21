@@ -5,8 +5,8 @@ export default class Popupbox extends React.Component {
 
   render() {
     return (
-      <div className={styles.popDiv}>
-        <div> Reserved area </div>
+      <div className={styles.popupDiv}>
+        <div className={styles.popupBoard}> Reserved area </div>
       </div>
     );
   }
