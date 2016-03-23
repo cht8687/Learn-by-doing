@@ -21,8 +21,9 @@ const handlers = {
     state = state.set('topSearchModalActive', false);
   },
   [TOGGLE_TOPBAR_SEARCH_MODAL](state){
-  	let { topSearchModalActive } = this.state;
+  	let { topSearchModalActive } = state;
   	state = state.set('topSearchModalActive', !topSearchModalActive);
+  	return state;
   }
 }
 

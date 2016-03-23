@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from 'styles/Topbar/topbar.styl';
 import { connect } from 'react-redux';
-import { toggleTopSearchModal } from '../../actions/TopbarActions';
+import { toggleTopSearchModal } from 'actions/TopbarActions';
 
 export default class DropDown extends React.Component {
 
@@ -16,10 +16,15 @@ export default class DropDown extends React.Component {
   }
   
   handleDropDownClick() {
-    
+    let { dispatch } = this.props;
     dispatch(toggleTopSearchModal());
   }
 }
+
+DropDown.propTypes = {
+  dispatch: PropTypes.func.isRequired
+};
+
 
 const mapDispatchToProps = (dispatch) => {
   return {

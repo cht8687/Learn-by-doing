@@ -18,7 +18,3 @@ export default class SearchBar extends React.Component {
     );
   }
 }
-
-SearchBar.propTypes = {
-  topSearchModalActive: PropTypes.bool.isRequired
-};
