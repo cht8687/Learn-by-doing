@@ -7,7 +7,7 @@ import SearchBar from './SearchBar/SearchBar';
 export default class Topbar extends React.Component {
 
   render() {
-
+    const { topSearchModalActive } = this.props;
     return (
        //logo  -------- Searchbar --------- Menus buttons
       <div className={styles.container}>
@@ -15,7 +15,9 @@ export default class Topbar extends React.Component {
           <span className={styles.logo} />
         </div>
         <div className={styles.middleDiv}>
-          <SearchBar />
+          <SearchBar
+            topSearchModalActive={topSearchModalActive} 
+          />
         </div>
         <div className={styles.rightDiv}>
         </div>
@@ -23,6 +25,10 @@ export default class Topbar extends React.Component {
     );
   }
 }
+
+Topbar.propTypes = {
+  topSearchModalActive: PropTypes.bool.isRequired
+};
 
 // Topbar.propTypes = {
 //   topSearchModalActive: PropTypes.bool.isRequired

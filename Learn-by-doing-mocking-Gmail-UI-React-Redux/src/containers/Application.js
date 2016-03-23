@@ -11,8 +11,12 @@ export default class Application extends Component {
 
     return (
       <div>
-        <Topbar />
-        <TopPopupbox topSearchModalActive={topSearchModalActive} />
+        <Topbar
+          topSearchModalActive={topSearchModalActive} 
+        />
+        <TopPopupbox 
+          topSearchModalActive={topSearchModalActive} 
+        />
       </div>
     );
   }
@@ -29,5 +33,5 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(Application)
+export default connect(mapStateToProps)(Application);
 

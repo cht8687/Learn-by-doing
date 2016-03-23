@@ -1,7 +1,8 @@
 import createReducer from './createReducer';
 import {
   SHOW_TOPBAR_SEARCH_MODAL,
-  HIDE_TOPBAR_SEARCH_MODAL
+  HIDE_TOPBAR_SEARCH_MODAL,
+  TOGGLE_TOPBAR_SEARCH_MODAL
 } from '../constant/Actionnames';
 import { Record } from 'immutable';
 
@@ -18,6 +19,10 @@ const handlers = {
   },
   [HIDE_TOPBAR_SEARCH_MODAL](state){
     state = state.set('topSearchModalActive', false);
+  },
+  [TOGGLE_TOPBAR_SEARCH_MODAL](state){
+  	let { topSearchModalActive } = this.state;
+  	state = state.set('topSearchModalActive', !topSearchModalActive);
   }
 }
 

@@ -59,7 +59,8 @@ module.exports = {
     extensions: ['', '.js', '.styl'], 
     alias: { 
       styles: path.resolve('src/styles'),
-      components: path.resolve('src/components')
+      components: path.resolve('src/components'),
+      actions: path.resolve('src/actions')
     } 
   },
   stats: { colors: true },
