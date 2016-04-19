@@ -8,7 +8,7 @@ export default class Popupbox extends React.Component {
   	const { topSearchModalActive } = this.props;
     return (
       <div className={classnames(styles.popupDiv, {[styles.hide]: !topSearchModalActive}, {[styles.show]: topSearchModalActive})}>
-        <div className={styles.popupBoard}> Reserved area </div>
+        <div className={styles.popupBoard}>  </div>
       </div>
     );
   }
